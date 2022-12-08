@@ -1,0 +1,23 @@
+android {
+    namespace 'com.abizareyhan.pokedex'
+
+    defaultConfig {
+        applicationId "com.abizareyhan.pokedex"
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":data")
+    implementation project(":domain")
+    implementation project(":feature:pokemon")
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+
+    implementation "androidx.room:room-runtime:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+}

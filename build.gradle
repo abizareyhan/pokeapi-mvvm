@@ -1,0 +1,36 @@
+buildscript {
+    dependencies {
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.42"
+    }
+}
+
+plugins {
+    id "com.android.application" version "7.3.0" apply false
+    id "com.android.library" version "7.3.0" apply false
+    id "org.jetbrains.kotlin.android" version "1.7.10" apply false
+    id "org.jetbrains.kotlin.jvm" version "1.7.10" apply false
+    id "com.google.dagger.hilt.android" version "2.42" apply false
+}
+
+subprojects { subProject ->
+    apply plugin: "org.jetbrains.kotlin.android"
+    apply plugin: "kotlin-kapt"
+    apply plugin: "dagger.hilt.android.plugin"
+
+    if(subProject.name == "app") {
+        apply plugin: "com.android.application"
+        apply from: "${rootProject.rootDir}/common.gradle"
+    } else if(subProject.name == "core") {
+        apply plugin: "com.android.library"
+        apply from: "${rootProject.rootDir}/common.gradle"
+        apply plugin: "kotlin-parcelize"
+    } else if(subProject.name == "domain" || subProject.name == "data") {
+        apply plugin: "com.android.library"
+        apply from: "${rootProject.rootDir}/common.gradle"
+    } else {
+        apply plugin: "com.android.library"
+        apply from: "${rootProject.rootDir}/common.gradle"
+        apply from: "${rootProject.rootDir}/common-feature.gradle"
+        apply plugin: "kotlin-parcelize"
+    }
+}

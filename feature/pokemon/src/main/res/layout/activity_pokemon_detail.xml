@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:background="@color/type_grass">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:srcCompat="@drawable/ic_back"
+            app:layout_constraintTop_toTopOf="@id/tvHeader"
+            app:layout_constraintBottom_toBottomOf="@id/tvHeader"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintEnd_toStartOf="@id/tvID"
+            tools:text="Bulbasaur"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/tvHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvHeader"
+            tools:text="#001"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bgPokeball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/bg_pokeball"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_rounded_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivThumbnail"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:padding="12dp"
+            app:srcCompat="@drawable/ic_prev"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivThumbnail"
+            app:layout_constraintTop_toTopOf="@id/ivThumbnail"
+            app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:padding="12dp"
+            app:srcCompat="@drawable/ic_next"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivThumbnail"
+            app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@color/type_poison"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/ivThumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_tags"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/about"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/rvTags"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintEnd_toStartOf="@id/tvID"
+            tools:textColor="@color/type_grass"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWeightAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:drawableStart="@drawable/ic_weight"
+            android:drawablePadding="8dp"
+            android:textColor="@color/color_212121"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="@id/tvHeightAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvHeightAmount"
+            app:layout_constraintEnd_toStartOf="@id/tvHeightAmount"
+            tools:text="6,9 kg"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeightAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:drawableStart="@drawable/ic_height"
+            android:drawablePadding="8dp"
+            android:textColor="@color/color_212121"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvAbout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="0,7 m"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMoveAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/color_212121"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="@id/tvHeightAmount"
+            app:layout_constraintStart_toEndOf="@id/tvHeightAmount"
+            app:layout_constraintBottom_toBottomOf="@id/tvHeightAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Chlorophyll\nOvergrow"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierAmountTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvHeightAmount, tvMoveAmount, tvWeightAmount"
+            app:barrierDirection="top"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierAmountBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierMargin="4dp"
+            app:constraint_referenced_ids="tvHeightAmount, tvMoveAmount, tvWeightAmount"
+            app:barrierDirection="bottom"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/weight"
+            android:textColor="@color/color_666666"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/barrierAmountBottom"
+            app:layout_constraintStart_toStartOf="@id/tvWeightAmount"
+            app:layout_constraintEnd_toEndOf="@id/tvWeightAmount" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/height"
+            android:textColor="@color/color_666666"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/barrierAmountBottom"
+            app:layout_constraintStart_toStartOf="@id/tvHeightAmount"
+            app:layout_constraintEnd_toEndOf="@id/tvHeightAmount" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMoves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/moves"
+            android:textColor="@color/color_666666"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/barrierAmountBottom"
+            app:layout_constraintStart_toStartOf="@id/tvMoveAmount"
+            app:layout_constraintEnd_toEndOf="@id/tvMoveAmount" />
+
+        <View
+            android:id="@+id/separatorWeightHeight"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/color_E0E0E0"
+            app:layout_constraintStart_toEndOf="@id/tvWeight"
+            app:layout_constraintEnd_toStartOf="@id/tvHeight"
+            app:layout_constraintTop_toTopOf="@id/barrierAmountTop"
+            app:layout_constraintBottom_toBottomOf="@id/tvWeight"/>
+
+        <View
+            android:id="@+id/separatorHeightMove"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/color_E0E0E0"
+            app:layout_constraintStart_toEndOf="@id/tvHeight"
+            app:layout_constraintEnd_toStartOf="@id/tvMoves"
+            app:layout_constraintTop_toTopOf="@id/barrierAmountTop"
+            app:layout_constraintBottom_toBottomOf="@id/tvWeight"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="24dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/color_212121"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/tvHeight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger."/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBaseStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/base_stats"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintEnd_toStartOf="@id/tvID"
+            tools:textColor="@color/type_grass"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvBaseStats"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_stats"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEvolution"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/evolution"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/rvStats"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintEnd_toStartOf="@id/tvID"
+            tools:textColor="@color/type_grass"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEvolution"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintTop_toBottomOf="@id/tvEvolution"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_pokemon_grid"
+            tools:itemCount="3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

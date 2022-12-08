@@ -1,0 +1,7 @@
+android {
+    namespace 'com.abizareyhan.pokedex.feature.pokemon'
+}
+
+dependencies {
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}
